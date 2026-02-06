@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('layouts/head') %>
+</head>
+<body>
+    <div id="main" class="container">
+
+        <!-- Banner -->
+        <%- include('layouts/banner') %>
+
+        <hr>
+
+         <!-- Content -->
+         <div id="content" class="p-4 border">
+            <div class="container-fluid">
+
+                <h2>Code executor</h2>
+                <hr>
+
+                <form action="/" method="post" class="half">
+                    <div class="mb-3">
+                      <label for="codeFormControlTextarea1" class="form-label">Your code:</label>
+                      <textarea class="form-control" id="codeFormControlTextarea1" rows="10" name="code" aria-describedby="help"></textarea>
+                    </div>
+
+                    <div class="my-3">
+                        <button id="submit" type="submit" class="btn btn-rmp btn-rmp-secondary">Execute safely</button>
+                    </div>
+
+                    <% if (result != null) { %>
+                        <div class="card card-body">
+                          <pre><code><%= result %></code></pre>
+                        </div>
+                    <% } %>
+
+                </form>
+            </div>
+        </div>
+        <hr>
+
+        <!-- Footer -->
+        <%- include('layouts/footer') %>
+
+    </div>
+
+    <!-- Scripts -->
+    <%- include('layouts/scripts') %>
+
+</body>
+    
+</html>
